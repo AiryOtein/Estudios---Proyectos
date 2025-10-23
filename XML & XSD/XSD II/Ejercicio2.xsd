@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.example.com/fichas"
+    targetNamespace="http://www.example.com/fichas"
+    elementFormDefault="qualified">
+
+    <!-- Definición del tipo de dato para el atributo "numero" y el elemento "codigo" -->
+    <xs:simpleType name="dosDigitos">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-1][0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Definición del tipo de dato para el atributo "letra" -->
+    <xs:simpleType name="letraValida">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="X"/>
+            <xs:enumeration value="Y"/>
+            <xs:enumeration value="Z"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Definición del elemento "fichas" -->
+    <xs:element name="fichas">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Definición del elemento "ficha" -->
+                <xs:element name="ficha" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- Definición del elemento "codigo" -->
+                            <xs:element name="codigo" type="dosDigitos"/>
+                            <xs:element name="nombre" type="xs:string"/>
+                        </xs:sequence>
+                        <!-- Definición de los atributos "numero" y "letra" -->
+                        <xs:attribute name="numero" type="dosDigitos" use="required"/>
+                        <xs:attribute name="letra" type="letraValida"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

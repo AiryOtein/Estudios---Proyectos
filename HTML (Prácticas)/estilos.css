@@ -1,0 +1,58 @@
+section {
+    float: left; /* Hace que la sección flote a la izquierda */
+    width: 67%; /* Puedes ajustar el ancho según tus necesidades */
+    margin-right: 20px; /* Agrega un margen a la derecha para separar la sección de la barra lateral */
+}
+
+aside {
+    float: right; /* Hace que la barra lateral flote a la izquierda */
+    width: 30%; /* Puedes ajustar el ancho según tus necesidades */
+}
+footer {
+    clear: both; /* Hace que el footer se coloque debajo de los elementos flotantes anteriores */
+}
+	
+}
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+		</style>
+	
+    <style>
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: centre;
+            background-color: LightSkyBlue;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: lightskyblue;
+        }
+		h3 {
+		background-color:powderblue;	
+		}
+		h3 {
+		text-align: center;
+		}
+

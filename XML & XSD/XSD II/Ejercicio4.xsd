@@ -1,0 +1,10 @@
+<xs:element name="letras">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z][a-z]([A-Z][a-z])*"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<!--Esta expresión regular busca una letra mayúscula seguida de una
+letra minúscula, seguida opcionalmente de cero o más pares
+adicionales de letras (una mayúscula seguida de una minúscula)-->

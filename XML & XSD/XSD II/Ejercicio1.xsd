@@ -1,0 +1,31 @@
+<!--Usar xs:enumeration para enumerar los valores permitidos-->
+
+<xs:element name="respuesta">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="A"/>
+            <xs:enumeration value="B"/>
+            <xs:enumeration value="C"/>
+            <xs:enumeration value="D"/>
+            <xs:enumeration value="E"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+
+<!--Usar `xs:maxLength` para especificar la longitud máxima de
+la cadena-->
+
+<xs:element name="respuesta">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+
+
+<!--Ambas formas logran la misma restricción que `[ABCDE]` sin utilizar
+`xs:pattern`. La primera especifica directamente los valores permitidos
+usando `xs:enumeration`, mientras que la segunda limita la longitud de
+la cadena a 1 usando `xs:maxLength`, lo que significa que solo puede
+contener un carácter, y ese carácter debe ser uno de los especificados.-->
