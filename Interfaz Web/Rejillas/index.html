@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Layout Pastel — Columnas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="head-left">
+      <h1>Mi Cabecera Pastel</h1>
+    </div>
+    <div class="head-center">
+      <nav class="nav-scroll" aria-label="navegacion principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#serv">Servicios</a>
+        <a href="#proy">Proyectos</a>
+        <a href="#blog">Blog</a>
+        <a href="#cont">Contacto</a>
+        <a href="#mas">Más</a>
+      </nav>
+    </div>
+    <div class="head-right">
+      <div class="controls">
+        <button id="shiftLeft">Desplazar ←</button>
+        <button id="shiftRight">→ Desplazar</button>
+        <button id="swap">Reordenar</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainRow">
+    <aside id="leftCol" class="col left">
+      <h2>Columna izquierda</h2>
+      <p>Enlaces y mini-info.</p>
+      <ul>
+        <li>Enlace A</li>
+        <li>Enlace B</li>
+        <li>Enlace C</li>
+      </ul>
+    </aside>
+
+    <section id="centerCol" class="col center">
+      <h2>Columna central</h2>
+      <p>Rejilla anidada de tres columnas:</p>
+      <div class="inner-grid">
+        <div class="card">Item 1</div>
+        <div class="card">Item 2</div>
+        <div class="card">Item 3</div>
+        <div class="card">Item 4</div>
+        <div class="card">Item 5</div>
+        <div class="card">Item 6</div>
+      </div>
+    </section>
+
+    <aside id="rightCol" class="col right">
+      <h2>Columna derecha</h2>
+      <p>Widgets o info complementaria.</p>
+      <div class="widget">Widget pastel</div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>Pie de página — enlaces rápidos</p>
+    <nav class="nav-scroll" aria-label="navegacion pie">
+      <a href="#priv">Privacidad</a>
+      <a href="#ayuda">Ayuda</a>
+      <a href="#map">Mapa</a>
+      <a href="#legal">Legal</a>
+    </nav>
+  </footer>
+
+<script>
+const left = document.getElementById('leftCol');
+const center = document.getElementById('centerCol');
+const right = document.getElementById('rightCol');
+const cols = [left, center, right];
+function applyOrder(arr){
+  arr.forEach((el,i)=> el.style.order = i);
+}
+document.getElementById('shiftLeft').addEventListener('click', ()=>{
+  cols.push(cols.shift());
+  applyOrder(cols);
+});
+document.getElementById('shiftRight').addEventListener('click', ()=>{
+  cols.unshift(cols.pop());
+  applyOrder(cols);
+});
+let swapped = false;
+document.getElementById('swap').addEventListener('click', ()=>{
+  if(!swapped){
+    [cols[0], cols[2]] = [cols[2], cols[0]];
+    swapped = true;
+  } else {
+    [cols[0], cols[2]] = [cols[2], cols[0]];
+    swapped = false;
+  }
+  applyOrder(cols);
+});
+applyOrder(cols);
+</script>
+</body>
+</html>

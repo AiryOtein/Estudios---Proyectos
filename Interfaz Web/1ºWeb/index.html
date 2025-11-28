@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexa - Full Stack, Full Shine</title>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+
+header {
+    background: #15132b;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #8c3eff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.logo p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #00ffe0;
+    text-shadow: 0 0 10px #00ffe0, 0 0 20px #8c3eff;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav ul {
+    list-style:none;
+    display:flex;
+    gap:1.5rem;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav ul li a {
+    text-decoration:none;
+    color:#fff;
+    padding:0.5rem 1rem;
+    border-radius:6px;
+    background: rgba(140,62,255,0.2);
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(0,255,224,0.3);
+    color:#00ffe0;
+}
+
+.menu-toggle { display:none; font-size:1.5rem; cursor:pointer; color:#fff; }
+
+@media (max-width:768px){
+    nav ul { flex-direction:column; display:none; gap:1rem; background:#15132b; width:100%; padding:1rem; }
+    nav ul.active { display:flex; }
+    .menu-toggle { display:block; margin-top:0.5rem; }
+}
+
+.presentacion {
+    background: rgba(0,0,0,0.85);
+    padding:2rem;
+    border-radius:12px;
+    text-align:center;
+    margin-bottom:2rem;
+}
+
+.presentacion h2 {
+    font-size:2.5rem;
+    color:#00ffe0;
+    margin-bottom:1rem;
+}
+
+.tarjetas-presentacion {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:1rem;
+    margin-top:1rem;
+    align-items: stretch; 
+}
+
+.tarjeta {
+    flex: 1 1 200px;
+    background: rgba(140,62,255,0.2);
+    padding:1rem;
+    border-radius:12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.tarjeta:hover {
+    transform:translateY(-5px);
+    box-shadow: 0 0 15px #8c3eff, 0 0 25px #00ffe0;
+}
+
+.tarjeta h3 {
+    color:#00ffe0;
+    margin-bottom:0.5rem;
+}
+
+.tarjeta p {
+    color:#fff;
+    font-size:0.95rem;
+}
+
+aside.destacado {
+    flex: 1 1 200px;
+    padding: 1rem;
+    background: rgba(140,62,255,0.2);
+    border-radius: 12px;
+    color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 15px #8c3eff, 0 0 25px #00ffe0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+aside.destacado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #8c3eff, 0 0 40px #00ffe0;
+}
+
+.carrusel { 
+    overflow:hidden; 
+    height:200px; 
+    position:relative; 
+    display: flex;
+    align-items: center;
+}
+
+.slide { 
+    display:none; 
+    padding:0; 
+    text-align:center; 
+    border-radius:8px; 
+}
+
+.slide.active { display:block; }
+
+.slide img { 
+    width:100%; 
+    border-radius:8px; 
+    display: block;
+    margin: 0 auto;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <h1>Nexa</h1>
+            <p>Full Stack, Full Shine</p>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quienes-somos.html">Quienes somos</a></li>
+                <li><a href="productos.html">Productos/Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle">☰</div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="contenido-principal">
+        <div class="presentacion contenido-bloque">
+            <h2>Bienvenido a Nexa</h2>
+            <div class="tarjetas-presentacion">
+                <div class="tarjeta">
+                    <h3>🚀 Full Stack</h3>
+                    <p>Desarrollamos proyectos completos, del front al back, con la máxima eficiencia.</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>💻 Diseño Futurista</h3>
+                    <p>CSS avanzado y experiencias visuales que destacan en cualquier pantalla.</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>✨ Innovación Continua</h3>
+                    <p>Siempre a la vanguardia, incorporando tendencias y nuevas tecnologías.</p>
+                </div>
+                <aside class="destacado">
+                    <h3>Destacados</h3>
+                    <div class="carrusel">
+                        <div class="slide active"><img src="imagen2.jpg" alt="Proyecto 2"></div>
+                        <div class="slide"><img src="imagen3.jpg" alt="Proyecto 3"></div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-info">
+        <p>&copy; 2025 Nexa. Todos los derechos reservados.</p>
+        <p>Contacto: info@nexa.com</p>
+        <p>Síguenos: <a href="#">Instagram</a> | <a href="#">X</a></p>
+    </div>
+    <div class="sitemap">
+        <p>Mapa del sitio: <a href="index.html">Inicio</a> | <a href="quienes-somos.html">Quienes somos</a> | <a href="productos.html">Productos</a> | <a href="contacto.html">Contacto</a></p>
+    </div>
+</footer>
+
+<script>
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+toggle.addEventListener('click', () => menu.classList.toggle('active'));
+
+let slides = document.querySelectorAll('.slide');
+let current = 0;
+setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+}, 3000);
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Menú Animado</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    .menu {
+      background: linear-gradient(45deg, #ff6b81, #ff9a8b, #ffb3ab, #9b59b6, #6a1b9a, #3498db, #ffffff);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    .menu-item {
+      position: relative;
+      margin: 0 15px;
+    }
+
+    .menu-item a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 20px;
+      display: block;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .menu-item:hover > a {
+      background-color: rgba(255,255,255,0.2);
+      transform: scale(1.1);
+    }
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: linear-gradient(45deg, #ff6b81, #ff9a8b, #ffb3ab, #9b59b6, #6a1b9a, #3498db, #ffffff);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 100;
+    }
+
+    .menu-item:hover .submenu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .submenu li {
+      padding: 10px 20px;
+    }
+
+    .submenu li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .submenu li a:hover {
+      background-color: rgba(255,255,255,0.2);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+<nav class="menu">
+  <ul>
+    <li class="menu-item">
+      <a href="#">Inicio</a>
+      <ul class="submenu">
+        <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="#">Artículos</a></li>
+        <li><a href="#">Premios</a></li>
+      </ul>
+    </li>
+    <li class="menu-item">
+      <a href="#">Servicios</a>
+      <ul class="submenu">
+        <li><a href="#">Atención al Cliente</a></li>
+        <li><a href="#">Reparaciones</a></li>
+        <li><a href="#">Diseños</a></li>
+      </ul>
+    </li>
+    <li class="menu-item">
+      <a href="#">Contacto</a>
+      <ul class="submenu">
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Correo</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+</body>
+</html>

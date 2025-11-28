@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto - Nexa</title>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <h1>Nexa</h1>
+            <p>Full Stack, Full Shine</p>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quienes-somos.html">Quienes somos</a></li>
+                <li><a href="productos.html">Productos/Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle">☰</div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="contenido-principal">
+        <div class="contenido-bloque">
+            <h2>Contacto</h2>
+            <p>¿Quieres trabajar con nosotros o solicitar información? Nuestro equipo está listo para ayudarte.</p>
+            <div class="tarjetas-presentacion">
+                <div class="tarjeta">
+                    <h3>📧 Email</h3>
+                    <p>info@nexa.com</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>📞 Teléfono</h3>
+                    <p>+34 600 000 000</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>🌐 Redes Sociales</h3>
+                    <p><a href="#">Instagram</a> | <a href="#">X</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-info">
+        <p>&copy; 2025 Nexa. Todos los derechos reservados.</p>
+        <p>Contacto: info@nexa.com</p>
+        <p>Síguenos: <a href="#">Instagram</a> | <a href="#">X</a></p>
+    </div>
+    <div class="sitemap">
+        <p>Mapa del sitio: <a href="index.html">Inicio</a> | <a href="quienes-somos.html">Quienes somos</a> | <a href="productos.html">Productos</a> | <a href="contacto.html">Contacto</a></p>
+    </div>
+</footer>
+
+<script>
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+toggle.addEventListener('click', () => menu.classList.toggle('active'));
+</script>
+
+</body>
+</html>

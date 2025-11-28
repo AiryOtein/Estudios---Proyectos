@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Layout Pastel — Bootstrap (corregido)</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="d-flex align-items-center gap-3 p-3 header-bg">
+    <div class="head-left">
+      <h1 class="h4 mb-0 header-pill">Mi Cabecera Pastel <span class="badge bg-light text-dark ms-2">Beta</span></h1>
+    </div>
+
+    <div class="head-center flex-fill">
+      <nav class="nav-scroll d-flex align-items-center" aria-label="navegacion principal">
+        <a class="nav-link px-2" href="#inicio">Inicio</a>
+        <a class="nav-link px-2" href="#serv">Servicios</a>
+        <a class="nav-link px-2" href="#proy">Proyectos</a>
+        <a class="nav-link px-2" href="#blog">Blog</a>
+        <a class="nav-link px-2" href="#cont">Contacto</a>
+        <a class="nav-link px-2" href="#mas">Más</a>
+      </nav>
+    </div>
+
+    <div class="head-right">
+      <div class="btn-group" role="group" aria-label="controles">
+        <button id="shiftLeft" class="btn btn-sm btn-primary">Desplazar ←</button>
+        <button id="shiftRight" class="btn btn-sm btn-primary">→ Desplazar</button>
+        <button id="swap" class="btn btn-sm btn-outline-primary">Reordenar</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container-fluid py-4">
+    <div id="mainRow" class="row gx-4">
+      <!-- LEFT -->
+      <aside id="leftCol" class="col-12 col-md-3 order-0 mb-3">
+        <div class="panel p-3 h-100">
+          <h2 class="h5 text-primary">Columna izquierda</h2>
+          <p class="mb-2 lead">Enlaces y datos rápidos</p>
+          <address class="mb-2">
+            Calle de la Imaginación, 12345<br>
+            28000 Ciudad Pastel<br>
+            <a href="mailto:ejemplo@pastel.test">textodeejemplo@gmail.com</a>
+          </address>
+
+          <ul class="list-group list-group-flush mb-2">
+            <li class="list-group-item d-flex justify-content-between align-items-center">Enlace A <span class="badge bg-secondary">12</span></li>
+            <li class="list-group-item">Enlace B</li>
+            <li class="list-group-item">Enlace C</li>
+          </ul>
+
+          <nav class="nav flex-column">
+            <a class="nav-link p-0" href="#">Acceso rápido 1</a>
+            <a class="nav-link p-0" href="#">Acceso rápido 2</a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- CENTER -->
+      <section id="centerCol" class="col-12 col-md-6 order-1 mb-3">
+        <div class="panel p-3 h-100">
+          <h2 class="h5 text-primary">Columna central</h2>
+          <p class="mb-3">Rejilla anidada de tres columnas</p>
+
+          <div class="inner-grid row g-3 mb-3">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="card card-sm p-3 text-center">
+                <img src="https://via.placeholder.com/120x80/efd9f6/8e44ad?text=Img1" class="img-fluid rounded mb-2" alt="imagen 1">
+                <div class="fw-semibold">Item 1</div>
+                <div class="text-muted small">Descripción corta</div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="card card-sm p-3 text-center">
+                <img src="https://via.placeholder.com/120x80/fde8f0/9b59b6?text=Img2" class="img-fluid rounded mb-2" alt="imagen 2">
+                <div class="fw-semibold">Item 2</div>
+                <div class="text-muted small">Descripción corta</div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="card card-sm p-3 text-center">
+                <img src="https://via.placeholder.com/120x80/fbe4f0/b892d9?text=Img3" class="img-fluid rounded mb-2" alt="imagen 3">
+                <div class="fw-semibold">Item 3</div>
+                <div class="text-muted small">Descripción corta</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="card card-sm p-3 text-center">
+                <div class="fw-semibold">Item 4</div>
+                <div class="text-muted small">Detalle</div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="card card-sm p-3 text-center">
+                <div class="fw-semibold">Item 5</div>
+                <div class="text-muted small">Detalle</div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="card card-sm p-3 text-center">
+                <div class="fw-semibold">Item 6</div>
+                <div class="text-muted small">Detalle</div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="h6 text-secondary">Tabla de ejemplo</h3>
+          <div class="table-responsive mb-3">
+            <table class="table table-sm table-hover align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th>#</th>
+                  <th>Nombre</th>
+                  <th>Estado</th>
+                  <th class="text-end">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Proyecto A</td>
+                  <td><span class="badge bg-success">Activo</span></td>
+                  <td class="text-end">
+                    <button class="btn btn-sm btn-outline-primary">Ver</button>
+                    <button class="btn btn-sm btn-primary">Editar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Proyecto B</td>
+                  <td><span class="badge bg-warning text-dark">En pausa</span></td>
+                  <td class="text-end">
+                    <button class="btn btn-sm btn-outline-primary">Ver</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Proyecto C</td>
+                  <td><span class="badge bg-secondary">Archivado</span></td>
+                  <td class="text-end">
+                    <button class="btn btn-sm btn-outline-primary">Ver</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="h6 text-secondary mb-2">Formulario de contacto</h3>
+          <form class="row g-2 needs-validation" novalidate id="contactForm">
+            <div class="col-md-6">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="name" required>
+              <div class="invalid-feedback">Introduce tu nombre.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email</label>
+              <div class="input-group">
+                <span class="input-group-text">@</span>
+                <input type="email" class="form-control" id="email" required>
+                <div class="invalid-feedback">Introduce un email válido</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <label for="asunto" class="form-label">Asunto</label>
+              <input type="text" id="asunto" class="form-control" placeholder="Asunto">
+            </div>
+            <div class="col-12">
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea id="mensaje" rows="4" class="form-control" required></textarea>
+              <div class="invalid-feedback">Escribe tu mensaje.</div>
+            </div>
+            <div class="col-12 d-flex gap-2 align-items-center mt-1">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="newsletter">
+                <label class="form-check-label" for="newsletter">Enviar formulario</label>
+              </div>
+              <div class="ms-auto">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="reset" class="btn btn-outline-secondary">Borrar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- RIGHT -->
+      <aside id="rightCol" class="col-12 col-md-3 order-2 mb-3">
+        <div class="panel p-3 h-100">
+          <h2 class="h5 text-primary">Columna derecha</h2>
+          <p class="mb-2">Widgets y extras</p>
+
+          <div class="mb-3">
+            <div class="widget">Widget pastel</div>
+          </div>
+
+          <div class="mb-3">
+            <h4 class="h6">Lista desordenada</h4>
+            <ul class="list-unstyled">
+              <li>• Punto uno</li>
+              <li>• Punto dos</li>
+              <li>• Punto tres</li>
+            </ul>
+          </div>
+
+          <div class="mb-3">
+            <h4 class="h6">Acordeón</h4>
+            <div class="accordion" id="acc">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accOne">Detalle 1</button>
+                </h2>
+                <div id="accOne" class="accordion-collapse collapse" data-bs-parent="#acc">
+                  <div class="accordion-body">Contenido dentro del acordeón.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accTwo">Detalle 2</button>
+                </h2>
+                <div id="accTwo" class="accordion-collapse collapse" data-bs-parent="#acc">
+                  <div class="accordion-body">Más contenido.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="h6">Progreso</h4>
+            <div class="progress mb-2" role="progressbar" aria-label="progreso ejemplo">
+              <div class="progress-bar" style="width: 60%;">60%</div>
+            </div>
+            <button class="btn btn-sm btn-outline-secondary" id="incProgress">+10%</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="d-flex flex-wrap align-items-center justify-content-between gap-3 p-3 footer-bg">
+    <p class="mb-0 footer-pill">Pie de página — enlaces rápidos</p>
+    <nav class="nav-scroll d-flex gap-2">
+      <a class="nav-link px-2" href="#priv">Privacidad</a>
+      <a class="nav-link px-2" href="#ayuda">Ayuda</a>
+      <a class="nav-link px-2" href="#map">Mapa</a>
+      <a class="nav-link px-2" href="#legal">Legal</a>
+    </nav>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ORDER CONTROL (works by setting inline .style.order on the column containers)
+    const left = document.getElementById('leftCol');
+    const center = document.getElementById('centerCol');
+    const right = document.getElementById('rightCol');
+    let cols = [left, center, right];
+
+    function applyOrder(arr){
+      arr.forEach((el,i)=> el.style.order = i);
+    }
+
+    document.getElementById('shiftLeft').addEventListener('click', ()=>{
+      cols.push(cols.shift());
+      applyOrder(cols);
+    });
+    document.getElementById('shiftRight').addEventListener('click', ()=>{
+      cols.unshift(cols.pop());
+      applyOrder(cols);
+    });
+    document.getElementById('swap').addEventListener('click', ()=>{
+      [cols[0], cols[2]] = [cols[2], cols[0]];
+      applyOrder(cols);
+    });
+    applyOrder(cols);
+
+    // Bootstrap form validation
+    (function () {
+      'use strict'
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            event.preventDefault();
+            alert('Formulario enviado (simulado).');
+            form.reset();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+
+    // Progress increment
+    const incBtn = document.getElementById('incProgress');
+    incBtn.addEventListener('click', ()=>{
+      const bar = document.querySelector('.progress-bar');
+      let current = parseInt(bar.style.width) || 60;
+      current = Math.min(100, current + 10);
+      bar.style.width = current + '%';
+      bar.textContent = current + '%';
+    });
+  </script>
+</body>
+</html>

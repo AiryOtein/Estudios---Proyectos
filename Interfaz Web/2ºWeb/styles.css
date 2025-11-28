@@ -1,0 +1,93 @@
+:root {
+    --bg: #f8f4ff; 
+    --card-bg: #ffffff;
+    --accent: #c084fc;
+    --accent-dark: #9333ea;
+    --text: #2d2d2d;
+    --soft: #e9d8fd; 
+}
+
+body {
+    background-color: var(--bg);
+    font-family: "Poppins", sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.navbar {
+    background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+}
+
+.navbar-brand,
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: var(--soft) !important;
+}
+
+h1, h2, h3 {
+    color: var(--accent-dark);
+    font-weight: 600;
+}
+
+.card {
+    border-radius: 18px;
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 12px rgba(147, 51, 234, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(147, 51, 234, 0.25);
+}
+
+.card h3 {
+    color: var(--accent-dark);
+}
+
+.btn-primary,
+.btn-dark,
+.btn-success,
+.btn-warning {
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-dark);
+}
+
+.form-control {
+    border-radius: 12px;
+    border: 2px solid var(--soft);
+}
+
+.form-control:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 5px rgba(147, 51, 234, 0.3);
+}
+
+.nav-tabs .nav-link {
+    color: var(--accent-dark);
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--accent);
+    color: white !important;
+    border-color: var(--accent-dark);
+}
+
+.carousel-item img {
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(147, 51, 234, 0.2);
+}
