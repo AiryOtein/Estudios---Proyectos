@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1 - Letra DNI</title>
+</head>
+<body>
+  <h1>Ejercicio 1: Letra del DNI con Strings</h1>
+  <button onclick="ejercicio1()">Probar</button>
+  <p id="resultado1"></p>
+
+  <script>
+    //de aquí para abajo es lo que ve el usuario
+    function ejercicio1() { //se ejecuta al pulsar el botón
+      const dniStr = prompt("Introduce el número de tu DNI (sin letra):");
+      const dni = Number(dniStr);
+      //guarda el texto introducido por el usuario y lo convierte en números
+
+      if (dniStr === null) return; // usuario canceló
+      if (dniStr.trim() === "" || isNaN(dni)) {
+        document.getElementById("resultado1").innerText = "Debes escribir un número válido.";
+        return;
+      }
+
+      if (!Number.isInteger(dni) || dni < 0) {
+        document.getElementById("resultado1").innerText = "Introduce un número entero positivo.";
+        return;
+      }
+       //comprueba si es válido o no lo que el usuario puso
+
+      // Cadena con las letras posibles
+      const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+      const resto = dni % 23;
+      const letra = letras.charAt(resto);
+
+      document.getElementById("resultado1").innerText = "Tu DNI completo es: " + dni + letra;
+    }
+  </script>
+</body>
+</html>

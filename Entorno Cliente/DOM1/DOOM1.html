@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio DOM</title>
+  <style>
+    /* 1.2: Clase de estilos */
+    .miClase {
+      color: rgb(255, 2, 2);
+    }
+
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { margin: 5px 5px 0 0; padding: 5px 10px; cursor: pointer; }
+    .wrap { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+
+  <!-- 1.1: Div con 3 párrafos -->
+  <div id="contenedor" class="wrap">
+    <p id="parrafo1">Este es el primer párrafo</p>
+    <p id="parrafo2">Este es el segundo párrafo</p>
+    <p id="parrafo3" class="miClase">Este es el tercer párrafo</p>
+  </div>
+
+  <!-- 1.3: Botones -->
+  <div class="wrap">
+    <button id="cambiarTextos">Cambiar Textos</button>
+    <button id="cambiarClases">Cambiar Clases</button>
+    <button id="quitarClases">Quitar Clases</button>
+  </div>
+
+  <script>
+    // 1.4.
+    document.addEventListener('DOMContentLoaded', function () {
+      const btnCambiarTextos = document.getElementById('cambiarTextos');
+      const btnCambiarClases = document.getElementById('cambiarClases');
+      const btnQuitarClases = document.getElementById('quitarClases');
+
+      // 1.5.
+      btnCambiarTextos.addEventListener('click', cambiarTextos);
+      btnCambiarClases.addEventListener('click', cambiarClases);
+      btnQuitarClases.addEventListener('click', quitarClases);
+
+      // 1.6.
+      function cambiarTextos() {
+        // Por id
+        const p1 = document.getElementById('parrafo1');
+        if (p1) p1.textContent = 'Primer párrafo cambiado';
+
+        // Por etiqueta
+        const todosP = document.getElementsByTagName('p');
+        if (todosP.length > 1) todosP[1].textContent = 'Segundo párrafo cambiado';
+
+        // Por clase
+        const porClase = document.getElementsByClassName('miClase');
+        if (porClase.length > 0) porClase[0].textContent = 'Tercer párrafo (vía clase) cambiado';
+      }
+
+      // 1.7.
+      function cambiarClases() {
+        const p1 = document.getElementById('parrafo1');
+        const p2 = document.getElementById('parrafo2');
+
+        if (p1) p1.setAttribute('class', 'miClase');
+        if (p2) p2.className = 'miClase';
+      }
+
+      // 1.8: Function quitarClases
+      function quitarClases() {
+        const p1 = document.getElementById('parrafo1');
+        const p2 = document.getElementById('parrafo2');
+        const p3 = document.getElementById('parrafo3');
+
+        if (p1) p1.setAttribute('class', '');
+        if (p2) p2.className = '';
+        if (p3) p3.className = '';
+      }
+
+      // 1.9.
+      function quitarClasesDeTodos() {
+        const todos = document.getElementsByTagName('p');
+        const arrayParrafos = Array.from(todos);
+        for (let i = 0; i < arrayParrafos.length; i++) {
+          arrayParrafos[i].className = '';
+        }
+      } window.quitarClasesDeTodos = quitarClasesDeTodos; });
+  </script>
+</body>
+</html>

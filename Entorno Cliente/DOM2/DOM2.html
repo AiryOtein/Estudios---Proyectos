@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DOM 2</title>
+  <style>
+
+    .miClase { color: rgb(255, 2, 2); }
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { margin: 5px 5px 0 0; padding: 5px 10px; cursor: pointer; }
+    .wrap { margin-bottom: 12px; }
+    
+  </style>
+</head>
+<body>
+  <div id="contenedor" class="wrap">
+    <textarea id="texto" rows="3" cols="40" placeholder="Introduce el texto aquí"></textarea>
+    <div id="botones" style="margin-top:8px;">
+      <button id="crearParrafo">crearParrafo</button>
+      <button id="crearImagen">crearImagen</button>
+      <button id="borrarUltimo">borrarUltimo</button>
+      <button id="borrarPrimero">borrarPrimero</button>
+      <button id="sustituirPrimeroVacío">sustituirPrimeroVacío</button>
+    </div>
+  </div>
+
+  <script>
+    // 2.1.
+    function inicio() {
+      document.getElementById('crearParrafo').addEventListener('click', creaParrafo);
+      document.getElementById('crearImagen').addEventListener('click', crearImagen);
+      document.getElementById('borrarUltimo').addEventListener('click', borrarUltimo);
+      document.getElementById('borrarPrimero').addEventListener('click', borrarPrimero);
+      document.getElementById('sustituirPrimeroVacío').addEventListener('click', sustituirPrimeroVacío);
+    }
+    document.addEventListener('DOMContentLoaded', inicio);
+    function elementosDinamicos() {
+      const cont = document.getElementById('contenedor');
+      return Array.from(cont.children).filter(el => el.id !== 'texto' && el.id !== 'botones');
+    }
+
+    // 2.2.
+    function creaParrafo() {
+      const texto = document.getElementById('texto').value;
+      const p = document.createElement('p');
+      const nodoTexto = document.createTextNode(texto);
+      p.appendChild(nodoTexto);
+      p.setAttribute('class', 'miClase');
+      document.getElementById('contenedor').appendChild(p);
+    }
+
+    // 2.3.
+    function crearImagen() {
+      const ruta = prompt('Introduce el nombre de la imagen: ');
+      if (!ruta) return;
+      const img = document.createElement('img');
+      img.setAttribute('src', ruta);
+      img.setAttribute('alt', 'Imagen añadida');
+      img.style.maxWidth = '200px';
+      img.style.display = 'block';
+      img.style.marginTop = '8px';
+      document.getElementById('contenedor').appendChild(img);
+    }
+
+    // 2.4.
+    function borrarUltimo() {
+      const cont = document.getElementById('contenedor');
+      const dinamicos = elementosDinamicos();
+      if (dinamicos.length === 0) return;
+      const ultimo = dinamicos[dinamicos.length - 1];
+      cont.removeChild(ultimo);
+    }
+
+    // 2.5.
+    function borrarPrimero() {
+      const cont = document.getElementById('contenedor');
+      const dinamicos = elementosDinamicos();
+      if (dinamicos.length === 0) return;
+      const primero = dinamicos[0];
+      cont.removeChild(primero);
+    }
+
+    // 2.6.
+    function sustituirPrimeroVacío() {
+      const cont = document.getElementById('contenedor');
+      const p = document.createElement('p');
+      const nodo = document.createTextNode('Vacío');
+      p.appendChild(nodo); 
+      p.setAttribute('class', 'miClase');
+      const dinamicos = elementosDinamicos();
+      if (dinamicos.length > 0) {
+        cont.replaceChild(p, dinamicos[0]);
+      } else {
+        cont.appendChild(p);
+      }
+    }
+  </script>
+</body>
+</html>

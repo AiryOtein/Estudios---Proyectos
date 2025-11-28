@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ej.1 - Selección de productos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Selección de productos</h1>
+
+    <section class="panel">
+      <h2>1. Cargar fichero de productos</h2>
+      <p>Sube el fichero <code>productos.txt</code> (formato: <em>nombre;precio</em> por línea).</p>
+      <input id="fileInput" type="file" accept=".txt" />
+      <div id="mensaje" class="box">No hay productos cargados.</div>
+    </section>
+
+    <section class="panel">
+      <h2>2. Elegir producto</h2>
+      <select id="selectProducto" disabled>
+        <option value="">— Cargar fichero primero —</option>
+      </select>
+      <div id="precio" class="box">Precio: —</div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Camiseta;19.99
+Pantalones;39.50
+Gorra;9.95
+Sudadera;29.00
+Calcetines;4.50

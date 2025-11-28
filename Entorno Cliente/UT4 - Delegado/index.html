@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Votación Delegado (con TXT)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <h1>Elección de Delegado</h1>
+
+    <section>
+      <button id="btnCargar">Cargar alumnos (alumnos_clase.txt)</button>
+      <input id="fileInput" type="file" accept=".txt" class="hidden">
+      <div id="infoAlumnos" class="box">Alumnos no cargados.</div>
+    </section>
+
+    <section>
+      <h2>Candidatos</h2>
+      <div id="listaCandidatos" class="box">No hay candidatos.</div>
+    </section>
+
+    <section>
+      <h2>Votar (máx 20 votos)</h2>
+      <div id="zonaVoto" class="box">Pulsa "Cargar alumnos" para comenzar.</div>
+      <div id="estado" class="box small">Turno: 0 / 20</div>
+    </section>
+
+    <section>
+      <h2>Resultados</h2>
+      <div id="resultados" class="box">Aún no hay resultados.</div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

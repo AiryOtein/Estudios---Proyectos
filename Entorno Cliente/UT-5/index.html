@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Variado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Formulario con Inputs Variados</h1>
+
+    <form id="miFormulario">
+        <label>Fecha de nacimiento:
+            <input type="date" id="fecha">
+        </label>
+
+        <label>Contraseña:
+            <input type="password" id="password">
+        </label>
+
+        <label>Teléfono:
+            <input type="tel" id="telefono">
+        </label>
+
+        <label>Sitio web:
+            <input type="url" id="web">
+        </label>
+
+        <label>Nivel de energía:
+            <input type="range" id="energia" min="0" max="100">
+        </label>
+
+           <button type="button" id="botonMostrar" onclick="mostrarDatos()">Mostrar datos</button>
+    </form>
+
+    <h2>Datos introducidos:</h2>
+    <pre id="resultado"></pre>
+
+    <script src="script.js"></script>
+</body>
+</html>

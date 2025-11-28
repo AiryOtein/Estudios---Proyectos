@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DOM3</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Acceso y navegación por elementos</h1>
+
+  <div id="norte" class="zona">
+    <h2 tabindex="0" aria-expanded="false">Galicia</h2>
+    <ul class="provincias hidden" aria-hidden="true">
+      <li>A Coruña</li>
+      <li>Lugo</li>
+      <li>Ourense</li>
+      <li>Pontevedra</li>
+    </ul>
+  </div>
+
+  <div id="sur" class="zona">
+    <h2 tabindex="0" aria-expanded="false">Andalucía</h2>
+    <ul class="provincias hidden" aria-hidden="true">
+      <li>Jaén</li>
+      <li>Cádiz</li>
+      <li>Sevilla</li>
+      <li>Huelva</li>
+      <li>Málaga</li>
+      <li>Almería</li>
+      <li>Córdoba</li>
+      <li>Granada</li> 
+    </ul>
+  </div>
+
+  <div id="este" class="zona">
+    <h2 tabindex="0" aria-expanded="false">Comunidad Valenciana</h2>
+    <ul class="provincias hidden" aria-hidden="true">
+      <li>Alicante</li>
+      <li>Castellón</li>
+      <li>Valencia</li>
+    </ul>
+  </div>
+
+  <div id="oeste" class="zona">
+    <h2 tabindex="0" aria-expanded="false">Extremadura</h2>
+    <ul class="provincias hidden" aria-hidden="true">
+      <li>Badajoz</li>
+      <li>Cáceres</li>
+    </ul>
+  </div>
+
+  <div id="resultado" aria-live="polite">Pulsa cualquier título para ver su información</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

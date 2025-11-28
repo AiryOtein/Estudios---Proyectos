@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3 - DWEC</title>
+  <script>
+    function abrirVentana() {
+      const nuevaVentana = window.open("", "VentanaNueva", "width=600,height=400,resizable=no");
+
+      nuevaVentana.document.write("<h3>Ejemplo de Ventana Nueva</h3>");
+      nuevaVentana.document.write("URL Completa: " + window.location.href + "<br>");
+      nuevaVentana.document.write("Protocolo utilizado: " + window.location.protocol + "<br>");
+      nuevaVentana.document.write("Nombre en código del navegador: " + navigator.appCodeName + "<br>");
+
+      if (navigator.javaEnabled()) {
+        nuevaVentana.document.write("Java SI disponible en esta ventana<br>");
+      } else {
+        nuevaVentana.document.write("Java NO disponible en esta ventana<br>");
+      }
+
+    
+      
+      document.body.innerHTML += "<h1>TAREA DWEC03</h1><hr>";
+
+      const nombre = prompt("Introduzca su nombre y apellidos:");
+      const dia = parseInt(prompt("Introduzca DIA de nacimiento:"));
+      const mes = parseInt(prompt("Introduzca MES de nacimiento (1-12):"));
+      const anio = parseInt(prompt("Introduzca AÑO de nacimiento:"));
+
+      const hoy = new Date();
+      let edad = hoy.getFullYear() - anio;
+      if (hoy.getMonth() + 1 < mes || (hoy.getMonth() + 1 === mes && hoy.getDate() < dia)) edad--;
+
+      const cos180 = Math.cos(180 * Math.PI / 180);
+      const mayor = Math.max(34, 67, 23, 75, 35, 19);
+      const azar = Math.random();
+
+      document.write(`
+        Buenos días ${nombre}<br>
+        Tu nombre tiene ${nombre.length} caracteres, incluidos espacios.<br>
+        La primera letra A de tu nombre está en la posición: ${nombre.indexOf("a") + 1}<br>
+        La última letra A de tu nombre está en la posición: ${nombre.lastIndexOf("a") + 1}<br>
+        Tu nombre menos las 3 primeras letras es: ${nombre.slice(3)}<br>
+        Tu nombre todo en mayúsculas es: ${nombre.toUpperCase()}<br>
+        Tu edad es: ${edad} años.<br>
+        Naciste un feliz ${dia}/${mes} del año ${anio}.<br>
+        El coseno de 180 es: ${cos180}<br>
+        El número mayor de (34,67,23,75,35,19) es: ${mayor}<br>
+        Ejemplo de número al azar: ${azar}<br>
+      `)
+    }
+  </script>
+</head>
+<body>
+  <h1>Ejercicio 3</h1>
+  <button onclick="abrirVentana()">Ejecutar ejercicio</button>
+</body>
+</html>

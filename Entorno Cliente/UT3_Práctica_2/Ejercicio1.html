@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicio 1</title>
+</head>
+<body>
+  <h1>Ejercicio 1</h1>
+  <p>Pulsa el botón para abrir el aula virtual</p>
+  <button id="abrir">Púlsame :></button>
+
+  <script>
+    document.getElementById('abrir').onclick = function () {
+      var url = 'https://aulavirtual3.educa.madrid.org/ies.lagunadejoatzel.getafe/course/view.php?id=616';
+
+      // Tamaño de la ventana (es modificable)
+      var ancho = 600;
+      var alto  = 400;
+      var left = Math.round(screen.alto / 2);
+      var top  = Math.round(screen.ancho / 2);
+
+      var opciones = 'width=' + ancho + ',height=' + alto +
+       ',left=' + left + ',top=' + top + ',resizable=yes,scrollbars=yes';
+
+      window.open(url, 'AulaDWEC', opciones);
+    };
+  </script>
+</body>
+</html>

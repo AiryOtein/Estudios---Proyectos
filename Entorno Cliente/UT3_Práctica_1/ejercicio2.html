@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 2</title>
+</head>
+<body>
+  <h1>Ejercicio 2: Calcular nota final</h1>
+  <button onclick="ejercicio2()">Probar</button>
+  <p id="resultado2"></p>
+
+  <script>
+    function ejercicio2() {
+      let practica1 = Number(prompt("Introduce la primera nota de práctica:"));
+      let practica2 = Number(prompt("Introduce la segunda nota de práctica:"));
+      let examen = Number(prompt("Introduce la nota del examen:"));
+      let actitud = Number(prompt("Introduce la nota de actitud:"));
+      //pedimos un prompt para cada apartado, y con Number lo convertimos a número
+
+      if (practica1 < 4 || practica2 < 4 || examen < 4) {
+        document.getElementById("resultado2").innerText =
+          "No se puede calcular la media porque alguna nota es menor a 4.";
+        return;
+      } //condición, hace que si alguna es menor que 4, no se calcule
+
+      let mediaPracticas = (practica1 + practica2) / 2;
+
+      let notaActitud = 0;
+      if (mediaPracticas >= 4.5 && examen >= 4.5) {
+        notaActitud = actitud * 0.1;
+      }
+      /* inicializo la actitud a 0, ya que solo se aplicará
+      si las notas son más o igual a 4.5, si lo cumple,
+      se aplicará el 10%*/
+
+      let notaFinal =
+        mediaPracticas * 0.45 + examen * 0.45 + notaActitud;
+
+      document.getElementById("resultado2").innerText =
+        "Tu nota final es: " + notaFinal.toFixed(2);
+        //muestra el resultado en el párrafo redondeando a decimales
+    }
+  </script>
+</body>
+</html>

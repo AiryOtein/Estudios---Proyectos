@@ -1,0 +1,68 @@
+:root {
+  --fondo: #1a001f;
+  --panel: #2b0033;
+  --rosa: #ff7bcb;
+  --morado: #b38cff;
+  --blanco: #ffffff;
+}
+
+body {
+  background: linear-gradient(135deg, var(--panel), var(--fondo));
+  color: var(--blanco);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.contenedor {
+  max-width: 700px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: var(--rosa);
+}
+
+h2 {
+  color: var(--morado);
+}
+
+button {
+  background: var(--rosa);
+  color: var(--blanco);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: var(--morado);
+}
+
+.box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.small {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.candidato {
+  margin: 5px 0;
+  color: var(--rosa);
+}
+
+.resultado-linea {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px;
+  margin: 4px 0;
+  border-radius: 6px;
+}
